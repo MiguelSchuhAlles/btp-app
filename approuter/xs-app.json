@@ -1,0 +1,7 @@
+{
+    "routes": [{
+      "source": "^/countries/(.*)$",
+      "target": "/countries/$1",
+      "destination": "btp-app"
+    }]
+  }

@@ -1,0 +1,34 @@
+applications:
+  - name: btp-app
+    instances: 1
+    path: .
+    buildpacks:
+      - nodejs_buildpack
+    memory: 256M
+    routes:
+      - route: btp-app-grouchy-marmot-ut.cfapps.us10-001.hana.ondemand.com
+    command: npm run start:prod
+    random-route: true
+    services:
+      - RESTCountriesAPI
+      - btp-app-xs-202309
+
+  # Application Router
+  - name: approuter
+    routes:
+      - route: approuter-btp-app-grouchy-marmot-ut.cfapps.us10-001.hana.ondemand.com
+    path: approuter
+    buildpacks:
+      - nodejs_buildpack
+    memory: 128M
+    env:
+      destinations: >
+        [
+          {
+            "name":"btp-app",
+            "url":"https://btp-app-grouchy-marmot-ut.cfapps.us10-001.hana.ondemand.com",
+            "forwardAuthToken": true
+          }
+        ]
+    services:
+      - btp-app-xs-202309

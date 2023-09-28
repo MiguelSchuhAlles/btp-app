@@ -1,0 +1,16 @@
+{
+    "xsappname": "btp-app-xs-202309",
+    "tenant-mode": "dedicated",
+    "oauth2-configuration": {
+      "redirect-uris": [
+        "https://btp-app-grouchy-marmot-ut.cfapps.us10-001.hana.ondemand.com",
+        "https://btp-app-grouchy-marmot-ut.cfapps.us10-001.hana.ondemand.com/countries",
+        "https://btp-app-grouchy-marmot-ut.cfapps.us10-001.hana.ondemand.com/countries/EN",
+        "https://approuter-btp-app-grouchy-marmot-ut.cfapps.us10-001.hana.ondemand.com",
+        "https://approuter-btp-app-grouchy-marmot-ut.cfapps.us10-001.hana.ondemand.com/countries",
+        "https://approuter-btp-app-grouchy-marmot-ut.cfapps.us10-001.hana.ondemand.com/countries/EN",
+        "https://*.cfapps.us10-001.hana.ondemand.com/**",
+        "https://approuter-btp-app-grouchy-marmot-ut.cfapps.us10-001.hana.ondemand.com/login/callback"
+      ]
+  }
+  }
